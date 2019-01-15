@@ -8,7 +8,9 @@
 
 %%TODO 
 
-% 50Ohm/HighZ
+% 50Ohm/HighZ  bei 50\Omega wird spannung verdoppelt bei HighZ nicht. 
+%Aliasing 
+%SE & DE 
 
 
 
@@ -206,8 +208,15 @@ Vollbrücke besteht aus 4 DMS und sonst alles gleich wie bei Halbbrücke.
 
 
 
+\item Messung von unbekannten Kondensator 
 
-
+\begin{figure}[h]
+\includegraphics[width=5cm]{pic/wienbr}
+\end{figure}
+Komplexe Abgleichbedingung:
+\begin{equation}
+\frac{1}{Z_x} = \frac{R_4}{R_3} \frac{1}{Z_2} \Rightarrow R_x = \frac{R_3}{R_4}R_{2p}\quad \& \quad C_x = \frac{R_4}{R_3}C_{2p}
+\end{equation}
 
 
 
@@ -261,8 +270,10 @@ Der Trigger legt fest ab welcher Amplituden-Höhe das Signal erfasst wird.
 
 \textbf{DAQ Karte} 
 
-\textbf{Nyquist Frequenz} ist die Hälte der Abtastfrequenz und die Abtastfrequenz muss mind. doppelt so groß sein wie die größte vorkommende Frequenz. 
+\textbf{Nyquist Frequenz} oder auch Nyquist Bedingung ist die Hälte der Abtastfrequenz und die Abtastfrequenz muss mind. doppelt so groß sein wie die größte vorkommende Frequenz. 
 
+\textbf{Aliasing}: tritt auf wenn die Nyquist Bedingung nicht erfüllt ist. Kann durch einen \textit{(geeigneten)} Tiefpassfilter verhindert werden.  % Die Nyquist Bedingung ist erfüllt wenn die Abtastfrequenz mind. doppelt so groß ist wie die 
+Tritt Aliasing auf so erkennt man dies anhand von Spiegelungen im abgetasteten Signal. Die Spiegelung wandert zu \(f_{Spiegel} =  f_{Abtast} - f_{Signal} \)
 
 \subsection*{6. Labor }
 
